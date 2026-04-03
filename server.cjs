@@ -190,6 +190,8 @@ try {
 try {
   const adminRoute = require('./routes/admin.cjs');
   app.use('/api/v1/admin', adminRoute);
+  // Also support legacy frontend path and direct calls:
+  app.use('/api/admin', adminRoute);
 } catch (error) {
   console.error('✗ Failed to load route admin:', error.message);
 }
